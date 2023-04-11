@@ -40,14 +40,14 @@ public class BlackJack {
     /**
      * Controla el acceso de las diferentes opciones del menu principal.
      */
-    private void showGame(){
+    public void showGame(){
         int option=-1;
         double balance=0;
         double bet=0;
         Scanner entrance = new Scanner(System.in);
         do{
             showOptions();
-            System.out.print("\tIngrese la opción : ");
+            System.out.print("\tIngrese la opcion : ");
             try {
                 option = entrance.nextInt();
             } catch (InputMismatchException e){
@@ -56,6 +56,8 @@ public class BlackJack {
                 continue;
             }
             switch (option){
+                case 0 :
+                    break;
                 case 1 :
                     if (player != null){
                         //evaluatingGameEntry();
@@ -105,7 +107,7 @@ public class BlackJack {
             System.out.println("\t2. JackBlack");
             System.out.println("\t3. -");
             System.out.println("\t0. Retroceder");
-            System.out.print("\tIngrese la opción : ");
+            System.out.print("\tIngrese la opcion : ");
             try{
                 option = entrance.nextInt();
             }catch (InputMismatchException e){
@@ -130,11 +132,11 @@ public class BlackJack {
     /**
      * Muestras las opciones disponibles al iniciar la aplicación
      */
-    private void showOptions(){
+    public void showOptions(){
         System.out.println("\n\t1. Seleccionar juego");
         System.out.println("\t2. Ingresar saldo inicial del jugador");
         System.out.println("\t3. Consultar saldo del jugador");
-        System.out.println("\t4. Consultar histórico de resultados");
+        System.out.println("\t4. Consultar historico de resultados");
         System.out.println("\t0. Salir");
     }
 
